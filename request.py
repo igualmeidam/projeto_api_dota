@@ -15,4 +15,5 @@ lista_herois = http.request(
 # transformando a informação json em data manipulável para o python
 dados_herois = json.loads(lista_herois.data.decode('utf-8'))
 
-list_comprehension = [[x['id'], x['localized_name']] for x in dados_herois]
+herois_por_id = [[x['id'], x['localized_name']] for x in dados_herois]
+

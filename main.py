@@ -1,5 +1,5 @@
 ﻿from fastapi import FastAPI
-from request import list_comprehension
+from request import herois_por_id
 
 
 app = FastAPI()
@@ -7,16 +7,16 @@ app = FastAPI()
 
 @app.get('/')
 def home():
-    return 'Funcionando!'
+    return 'funcionou!'
 
 
 @app.get('/heroes}')
 def todos_herois():
-    return list_comprehension
+    return herois_por_id
 
 
 @app.get('/heroes/{id_heroes}')
 def get_heroi_por_id(id_heroi: int):
-    for id, heroi in list_comprehension:
+    for id, heroi in herois_por_id:
         if id == id_heroi:
             return heroi
